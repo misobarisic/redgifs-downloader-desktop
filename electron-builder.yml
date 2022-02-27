@@ -1,6 +1,6 @@
 appId: com.misobarisic.rd.desktop
 productName: RedGIFs Downloader
-copyright: Copyright © 2021 Mišo Barišić
+copyright: Copyright © 2022 Mišo Barišić
 directories:
   output: dist
   buildResources: resources
@@ -10,3 +10,7 @@ files:
       - package.json
       - app
 publish: null
+win:
+  target: [nsis, portable]
+linux:
+  target: [AppImage, snap, zip, tar.xz]

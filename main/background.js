@@ -83,7 +83,7 @@ let fileCount = new Map();
             status.set(id, 2)
         })
 
-        instance.downloadQuery(arg.term, arg)
+        arg.userMode ? instance.downloadUser(arg.term, arg) : instance.downloadQuery(arg.term, arg)
         event.reply('endDownload', 'pong')
     })
 

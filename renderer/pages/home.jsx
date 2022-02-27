@@ -19,6 +19,7 @@ function Home() {
     const [maxViews, setMaxVies] = useState("")
     const [mobile, setMobile] = useState(true)
     const [existing, setExisting] = useState(false)
+    const [userMode, setUserMode] = useState(false)
     const [count, setCount] = useState("20")
 
     const [status, setStatus] = useState(new Map())
@@ -41,6 +42,7 @@ function Home() {
         ipcRenderer.send("startDownload", {
             term,
             dir,
+            userMode,
             numberToDownload: count,
             minLikes: minLikes === "" ? undefined : minLikes,
             maxLikes: maxLikes === "" ? undefined : maxLikes,
@@ -75,7 +77,8 @@ function Home() {
             <div className="flex flex-col space-y-2 items-center mt-4">
                 <Input value={dir} onInputHandler={e => setDir(e.target.value)} placeholder="" label="Download folder"/>
                 <Input value={term} onInputHandler={e => setTerm(e.target.value)}
-                       placeholder='Leave empty for "trending"' label="Search term"/>
+                       placeholder='Leave empty for "trending"' label={`Search term - ${userMode ? "user" : "query"}`}/>
+                <Toggle text="Search mode" enabled={userMode} setEnabled={setUserMode}/>
                 <Input value={count} onInputHandler={e => setCount(e.target.value)} placeholder=""
                        label="Number of clips"/>
                 <div className="flex flex-col space-y-2 items-center">

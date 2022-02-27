@@ -2,7 +2,7 @@
   "private": true,
   "name": "redgifs-downloader-desktop",
   "description": "Desktop application implementing the redgifs-downloader package.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Mišo Barišić",
   "license": "GNU GPL v3",
   "main": "app/background.js",
@@ -19,7 +19,7 @@
   "dependencies": {
     "electron-serve": "^1.1.0",
     "electron-store": "^8.0.1",
-    "redgifs-downloader": "^2.0.2"
+    "redgifs-downloader": "^2.1.0"
   },
   "devDependencies": {
     "@headlessui/react": "^1.4.2",
